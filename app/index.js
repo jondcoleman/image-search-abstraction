@@ -1,18 +1,21 @@
 'use strict';
 
-var UrlHandler = require(process.cwd() + '/app/urlController.js');
+var SearchHandler = require(process.cwd() + '/app/searchController.js');
 
 module.exports = function (app, db) {
-   var urlHandler = new UrlHandler(db);
+   var searchHandler = new SearchHandler(db);
 
    app.route('/')
       .get(function (req, res) {
          res.sendFile(process.cwd() + '/public/index.html');
       });
 
-  app.route('/:shortId')
-    .get(urlHandler.getUrl);
+  app.route('/api/recentsearches')
+    .get(searchHandler.getSearches);
 
-  app.route('/add/:urlToAdd(*)')
-    .get(urlHandler.addUrl);
+  app.route('/api/imagesearch/:query(*)')
+    .get(searchHandler.addSearch);
+
+
+
 };

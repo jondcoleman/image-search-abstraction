@@ -1,5 +1,4 @@
 'use strict';
-
 var express = require('express');
 var mongo = require('mongodb');
 var routes = require('./app/index.js');

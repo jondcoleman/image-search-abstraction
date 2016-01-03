@@ -2,19 +2,22 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Url Shortener</title>
+  <title>Image Search Abstraction</title>
 
 </head>
 
 <body>
   <div class="main">
+    <h1>Abstraction of Imgur API</h1>
     <h2>Example usage:</h2>
     <p>
-      https://url-shrtnr-fcc.herokuapp.com/add/http://www.google.com"
+      <h4>Standard:</h4> http://localhost:3000/api/imagesearch/programming
     </p>
-    <h2>Example output</h2>
     <p>
-      {"original_url": "http://www.google.com","short_url": "https://url-shrtnr-fcc.herokuapp.com/14"}
+      <h4>Specify page:</h4> http://localhost:3000/api/imagesearch/programming?offset=2
+    </p>
+    <p>
+      <h4>See recent searches:</h4> http://localhost:3000/api/recentsearches
     </p>
   </div>
 </body>
